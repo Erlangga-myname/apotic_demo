@@ -1,0 +1,273 @@
+Analyzing apotic...                                             
+
+   info • Constructors for public widgets should have a named 'key' parameter • lib/customer_pages/cart.dart:15:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/customer_pages/cart.dart:15:3 • prefer_const_constructors_in_immutables
+   info • Invalid use of a private type in a public API • lib/customer_pages/cart.dart:18:3 • library_private_types_in_public_api
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/cart.dart:127:40 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/cart.dart:130:32 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/cart.dart:131:36 • deprecated_member_use
+   info • Don't use 'BuildContext's across async gaps • lib/customer_pages/cart.dart:229:11 • use_build_context_synchronously
+   info • Use interpolation to compose strings and values • lib/customer_pages/cart.dart:278:31 • prefer_interpolation_to_compose_strings
+warning • Unused import: 'dart:convert' • lib/customer_pages/home.dart:1:8 • unused_import
+   info • The import of 'package:flutter/services.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' • lib/customer_pages/home.dart:4:8 • unnecessary_import
+warning • Unused import: 'package:cloud_firestore/cloud_firestore.dart' • lib/customer_pages/home.dart:12:8 • unused_import
+   info • Constructors for public widgets should have a named 'key' parameter • lib/customer_pages/home.dart:14:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/customer_pages/home.dart:16:3 • library_private_types_in_public_api
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/customer_pages/home.dart:63:38 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/customer_pages/home.dart:93:55 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/customer_pages/home.dart:100:53 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/customer_pages/home.dart:127:44 • deprecated_member_use
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/customer_pages/home.dart:162:32 • sized_box_for_whitespace
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/customer_pages/home.dart:269:64 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/customer_pages/home.dart:273:34 • deprecated_member_use
+   info • The local variable '_showSnackbar' starts with an underscore • lib/customer_pages/home.dart:344:10 • no_leading_underscores_for_local_identifiers
+   info • Don't use 'BuildContext's across async gaps • lib/customer_pages/home.dart:359:20 • use_build_context_synchronously
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/customer_pages/home.dart:465:27 • sized_box_for_whitespace
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/home.dart:496:44 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/home.dart:502:36 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/home.dart:505:40 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/home.dart:533:44 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/home.dart:536:36 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/home.dart:539:40 • deprecated_member_use
+   info • Don't use 'BuildContext's across async gaps • lib/customer_pages/home.dart:612:28 • use_build_context_synchronously
+   info • Unnecessary braces in a string interpolation • lib/customer_pages/home.dart:615:14 • unnecessary_brace_in_string_interps
+   info • Don't invoke 'print' in production code • lib/customer_pages/home.dart:628:7 • avoid_print
+   info • Constructors for public widgets should have a named 'key' parameter • lib/customer_pages/profile.dart:8:7 • use_key_in_widget_constructors
+   info • Don't use 'BuildContext's across async gaps • lib/customer_pages/profile.dart:31:15 • use_build_context_synchronously
+   info • Use interpolation to compose strings and values • lib/customer_pages/profile.dart:54:25 • prefer_interpolation_to_compose_strings
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/profile.dart:143:31 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/customer_pages/profile.dart:145:31 • deprecated_member_use
+   info • Constructors for public widgets should have a named 'key' parameter • lib/login/login.dart:40:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/login/login.dart:42:3 • library_private_types_in_public_api
+   info • Don't invoke 'print' in production code • lib/login/login.dart:85:5 • avoid_print
+   info • Don't invoke 'print' in production code • lib/login/login.dart:101:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/login/login.dart:105:11 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/login/login.dart:111:11 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/login/login.dart:118:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/login/login.dart:152:19 • avoid_print
+   info • Don't invoke 'print' in production code • lib/login/login.dart:162:19 • avoid_print
+   info • Don't invoke 'print' in production code • lib/login/login.dart:166:17 • avoid_print
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/login/login.dart:196:21 • sized_box_for_whitespace
+   info • The 'child' argument should be last in widget constructor invocations • lib/login/login.dart:199:25 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/login/login.dart:207:29 • deprecated_member_use
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/login/login.dart:218:21 • sized_box_for_whitespace
+   info • The 'child' argument should be last in widget constructor invocations • lib/login/login.dart:221:25 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/login/login.dart:229:29 • deprecated_member_use
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/login/login.dart:242:23 • sized_box_for_whitespace
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/login/login.dart:252:21 • sized_box_for_whitespace
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/login/login.dart:266:21 • sized_box_for_whitespace
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/login/login.dart:300:42 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/login/login.dart:303:38 • deprecated_member_use
+   info • The file name 'redirectRegisterAccount.dart' isn't a lower_case_with_underscores identifier • lib/login/redirectRegisterAccount.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/login/redirectRegisterAccount.dart:8:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/login/redirectRegisterAccount.dart:8:3 • prefer_const_constructors_in_immutables
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/login/redirectRegisterAccount.dart:20:13 • sized_box_for_whitespace
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/login/redirectRegisterAccount.dart:30:13 • sized_box_for_whitespace
+   info • Constructors for public widgets should have a named 'key' parameter • lib/login/register.dart:15:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/login/register.dart:17:3 • library_private_types_in_public_api
+warning • The value of the field '_umurController' isn't used • lib/login/register.dart:27:31 • unused_field
+warning • The value of the field '_umurError' isn't used • lib/login/register.dart:38:11 • unused_field
+warning • The value of the field '_genderError' isn't used • lib/login/register.dart:40:11 • unused_field
+warning • The value of the field '_noTelpError' isn't used • lib/login/register.dart:41:11 • unused_field
+   info • Don't invoke 'print' in production code • lib/login/register.dart:127:9 • avoid_print
+warning • The operand can't be 'null', so the condition is always 'false' • lib/login/register.dart:176:25 • unnecessary_null_comparison
+   info • Don't invoke 'print' in production code • lib/login/register.dart:210:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:210:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:211:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:211:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:212:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:212:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:213:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:213:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:214:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:214:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:215:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:215:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:216:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:216:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:217:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:217:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/login/register.dart:218:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/login/register.dart:218:11 • prefer_interpolation_to_compose_strings
+   info • The variable name 'TanggalLahir' isn't a lowerCamelCase identifier • lib/login/register.dart:342:16 • non_constant_identifier_names
+warning • The value of the local variable 'gg' isn't used • lib/login/register.dart:344:16 • unused_local_variable
+   info • Don't invoke 'print' in production code • lib/login/register.dart:357:5 • avoid_print
+   info • Don't invoke 'print' in production code • lib/login/register.dart:359:5 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/login/register.dart:413:13 • use_build_context_synchronously
+   info • The 'child' argument should be last in widget constructor invocations • lib/login/register.dart:434:17 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/login/register.dart:436:19 • deprecated_member_use
+   info • The 'child' argument should be last in widget constructor invocations • lib/login/register.dart:442:17 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/login/register.dart:444:19 • deprecated_member_use
+   info • The 'child' argument should be last in widget constructor invocations • lib/login/register.dart:468:17 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/login/register.dart:468:53 • deprecated_member_use
+   info • The 'child' argument should be last in widget constructor invocations • lib/login/register.dart:485:17 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/login/register.dart:485:52 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/login/register.dart:508:36 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/login/register.dart:511:32 • deprecated_member_use
+   info • Constructors for public widgets should have a named 'key' parameter • lib/main.dart:34:7 • use_key_in_widget_constructors
+   info • Constructors for public widgets should have a named 'key' parameter • lib/main.dart:67:7 • use_key_in_widget_constructors
+   info • Constructors for public widgets should have a named 'key' parameter • lib/main.dart:96:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/main.dart:98:3 • library_private_types_in_public_api
+   info • Constructors for public widgets should have a named 'key' parameter • lib/main.dart:209:7 • use_key_in_widget_constructors
+warning • The value of the local variable 'numberFormat' isn't used • lib/main.dart:212:18 • unused_local_variable
+   info • Constructors for public widgets should have a named 'key' parameter • lib/main.dart:323:7 • use_key_in_widget_constructors
+warning • The value of the local variable 'numberFormat' isn't used • lib/main.dart:326:18 • unused_local_variable
+warning • The value of the local variable 'iconData' isn't used • lib/main.dart:359:25 • unused_local_variable
+   info • The file name 'changeBanner.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/changeBanner.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/changeBanner.dart:8:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/changeBanner.dart:10:3 • library_private_types_in_public_api
+warning • The value of the field '_btnColor' isn't used • lib/manager_pages/changeBanner.dart:16:15 • unused_field
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/changeBanner.dart:46:30 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/changeBanner.dart:62:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/changeBanner.dart:75:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/changeBanner.dart:86:30 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/changeBanner.dart:91:7 • avoid_print
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/changeBanner.dart:108:19 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/changeBanner.dart:108:49 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/manager_pages/changeBanner.dart:125:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/manager_pages/changeBanner.dart:134:45 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/changeBanner.dart:165:34 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/changeBanner.dart:166:38 • deprecated_member_use
+   info • The file name 'createAccount.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/createAccount.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/createAccount.dart:8:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/createAccount.dart:10:3 • library_private_types_in_public_api
+   info • Don't invoke 'print' in production code • lib/manager_pages/createAccount.dart:27:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/manager_pages/createAccount.dart:27:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/manager_pages/createAccount.dart:28:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/manager_pages/createAccount.dart:28:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/manager_pages/createAccount.dart:29:5 • avoid_print
+   info • Use interpolation to compose strings and values • lib/manager_pages/createAccount.dart:29:11 • prefer_interpolation_to_compose_strings
+   info • Don't invoke 'print' in production code • lib/manager_pages/createAccount.dart:90:5 • avoid_print
+   info • Don't invoke 'print' in production code • lib/manager_pages/createAccount.dart:92:5 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/createAccount.dart:134:13 • use_build_context_synchronously
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/createAccount.dart:155:17 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/createAccount.dart:157:19 • deprecated_member_use
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/createAccount.dart:163:17 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/createAccount.dart:165:19 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/createAccount.dart:198:36 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/createAccount.dart:201:32 • deprecated_member_use
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/home.dart:14:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/home.dart:16:3 • library_private_types_in_public_api
+warning • The declaration '_formatMilliseconds' isn't referenced • lib/manager_pages/home.dart:50:10 • unused_element
+warning • The declaration '_formatMicroseconds' isn't referenced • lib/manager_pages/home.dart:54:10 • unused_element
+   info • The local variable '_showLogoutConfirmation' starts with an underscore • lib/manager_pages/home.dart:65:18 • no_leading_underscores_for_local_identifiers
+   info • Use interpolation to compose strings and values • lib/manager_pages/home.dart:121:19 • prefer_interpolation_to_compose_strings
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/home.dart:147:25 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/home.dart:148:34 • deprecated_member_use
+   info • The file name 'itemAdd.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/itemAdd.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/itemAdd.dart:11:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/itemAdd.dart:13:3 • library_private_types_in_public_api
+   info • The private field _btnColor could be 'final' • lib/manager_pages/itemAdd.dart:23:10 • prefer_final_fields
+warning • The value of the field '_itemTypeError' isn't used • lib/manager_pages/itemAdd.dart:26:11 • unused_field
+warning • The value of the field '_firebaseService' isn't used • lib/manager_pages/itemAdd.dart:44:25 • unused_field
+warning • The operand can't be 'null', so the condition is always 'false' • lib/manager_pages/itemAdd.dart:88:19 • unnecessary_null_comparison
+warning • Dead code • lib/manager_pages/itemAdd.dart:88:28 • dead_code
+warning • The operand can't be 'null', so the condition is always 'false' • lib/manager_pages/itemAdd.dart:110:22 • unnecessary_null_comparison
+warning • Dead code • lib/manager_pages/itemAdd.dart:110:31 • dead_code
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemAdd.dart:169:9 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemAdd.dart:178:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemAdd.dart:180:9 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemAdd.dart:204:7 • avoid_print
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/itemAdd.dart:223:17 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/itemAdd.dart:225:19 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/itemAdd.dart:335:36 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/itemAdd.dart:340:32 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/itemAdd.dart:352:36 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/itemAdd.dart:355:32 • deprecated_member_use
+   info • The file name 'itemDelete.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/itemDelete.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/itemDelete.dart:7:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/itemDelete.dart:9:3 • library_private_types_in_public_api
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemDelete.dart:43:9 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemDelete.dart:47:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemDelete.dart:49:9 • use_build_context_synchronously
+warning • The declaration '_isAnyCheckboxChecked' isn't referenced • lib/manager_pages/itemDelete.dart:54:8 • unused_element
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/itemDelete.dart:86:23 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/itemDelete.dart:88:25 • deprecated_member_use
+warning • Dead code • lib/manager_pages/itemDelete.dart:137:58 • dead_code
+warning • The left operand can't be null, so the right operand is never executed • lib/manager_pages/itemDelete.dart:138:45 • dead_null_aware_expression
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemDelete.dart:188:33 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemDelete.dart:226:9 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemDelete.dart:230:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemDelete.dart:232:9 • use_build_context_synchronously
+   info • The file name 'itemEdit.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/itemEdit.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/itemEdit.dart:7:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/itemEdit.dart:9:3 • library_private_types_in_public_api
+   info • Redundant initialization to 'null' • lib/manager_pages/itemEdit.dart:14:15 • avoid_init_to_null
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemEdit.dart:28:9 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemEdit.dart:32:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemEdit.dart:34:9 • use_build_context_synchronously
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/itemEdit.dart:62:19 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/itemEdit.dart:64:21 • deprecated_member_use
+warning • Dead code • lib/manager_pages/itemEdit.dart:109:58 • dead_code
+warning • The left operand can't be null, so the right operand is never executed • lib/manager_pages/itemEdit.dart:110:45 • dead_null_aware_expression
+   info • Unnecessary use of 'toList' in a spread • lib/manager_pages/itemEdit.dart:129:26 • unnecessary_to_list_in_spreads
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemEdit.dart:222:44 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemEdit.dart:229:37 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemEdit.dart:232:23 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemEdit.dart:235:44 • use_build_context_synchronously
+   info • The file name 'itemRedirect.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/itemRedirect.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/itemRedirect.dart:7:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/manager_pages/itemRedirect.dart:7:3 • prefer_const_constructors_in_immutables
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/manager_pages/itemRedirect.dart:22:15 • sized_box_for_whitespace
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/manager_pages/itemRedirect.dart:30:15 • sized_box_for_whitespace
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/itemRedirect.dart:46:23 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/itemRedirect.dart:47:32 • deprecated_member_use
+   info • The file name 'itemTypes.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/itemTypes.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/itemTypes.dart:5:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/itemTypes.dart:7:3 • library_private_types_in_public_api
+   info • Redundant initialization to 'null' • lib/manager_pages/itemTypes.dart:12:19 • avoid_init_to_null
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:25:28 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemTypes.dart:30:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:31:28 • use_build_context_synchronously
+   info • Use 'isNotEmpty' rather than negating the result of 'isEmpty' • lib/manager_pages/itemTypes.dart:60:40 • prefer_is_not_empty
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/itemTypes.dart:62:23 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/itemTypes.dart:64:25 • deprecated_member_use
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/itemTypes.dart:142:9 • sort_child_properties_last
+warning • The '!' will have no effect because the receiver can't be null • lib/manager_pages/itemTypes.dart:189:41 • unnecessary_non_null_assertion
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:205:46 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:214:39 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemTypes.dart:220:25 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:223:46 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:262:40 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:267:32 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemTypes.dart:273:19 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:276:40 • use_build_context_synchronously
+   info • The local variable '_formKey' starts with an underscore • lib/manager_pages/itemTypes.dart:291:32 • no_leading_underscores_for_local_identifiers
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:333:42 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:340:34 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemTypes.dart:346:21 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemTypes.dart:349:42 • use_build_context_synchronously
+   info • The file name 'itemView.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/itemView.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/itemView.dart:7:7 • use_key_in_widget_constructors
+   info • Invalid use of a private type in a public API • lib/manager_pages/itemView.dart:9:3 • library_private_types_in_public_api
+   info • Redundant initialization to 'null' • lib/manager_pages/itemView.dart:13:15 • avoid_init_to_null
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemView.dart:27:9 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code • lib/manager_pages/itemView.dart:31:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps • lib/manager_pages/itemView.dart:33:9 • use_build_context_synchronously
+   info • Use 'isNotEmpty' rather than negating the result of 'isEmpty' • lib/manager_pages/itemView.dart:59:40 • prefer_is_not_empty
+   info • The 'child' argument should be last in widget constructor invocations • lib/manager_pages/itemView.dart:61:23 • sort_child_properties_last
+   info • 'textScaleFactor' is deprecated and shouldn't be used. Use textScaler instead. Use of textScaleFactor was deprecated in preparation for the upcoming nonlinear text scaling support. This feature was deprecated after v3.12.0-2.0.pre • lib/manager_pages/itemView.dart:63:25 • deprecated_member_use
+warning • Dead code • lib/manager_pages/itemView.dart:107:62 • dead_code
+warning • The left operand can't be null, so the right operand is never executed • lib/manager_pages/itemView.dart:108:49 • dead_null_aware_expression
+   info • The file name 'redirectRegisterAccount.dart' isn't a lower_case_with_underscores identifier • lib/manager_pages/redirectRegisterAccount.dart:1:1 • file_names
+   info • Constructors for public widgets should have a named 'key' parameter • lib/manager_pages/redirectRegisterAccount.dart:8:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/manager_pages/redirectRegisterAccount.dart:8:3 • prefer_const_constructors_in_immutables
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/manager_pages/redirectRegisterAccount.dart:22:15 • sized_box_for_whitespace
+   info • Use a 'SizedBox' to add whitespace to a layout • lib/manager_pages/redirectRegisterAccount.dart:32:15 • sized_box_for_whitespace
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/redirectRegisterAccount.dart:48:23 • deprecated_member_use
+   info • 'MaterialStateProperty' is deprecated and shouldn't be used. Use WidgetStateProperty instead. Moved to the Widgets layer to make code available outside of Material. This feature was deprecated after v3.19.0-0.3.pre • lib/manager_pages/redirectRegisterAccount.dart:49:32 • deprecated_member_use
+   info • Don't invoke 'print' in production code • lib/services/firebase_service.dart:22:7 • avoid_print
+   info • Don't invoke 'print' in production code • lib/services/firebase_service.dart:69:7 • avoid_print
+   info • The file name 'usersAndItemsModel.dart' isn't a lower_case_with_underscores identifier • lib/usersAndItemsModel.dart:1:1 • file_names
+   info • The member 'id' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:13:12 • annotate_overrides
+   info • The member 'username' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:15:15 • annotate_overrides
+   info • The member 'password' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:16:15 • annotate_overrides
+   info • The member 'email' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:17:15 • annotate_overrides
+   info • The member 'type' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:24:15 • annotate_overrides
+   info • The member 'toMap' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:58:24 • annotate_overrides
+   info • The member 'username' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:81:15 • annotate_overrides
+   info • The member 'password' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:82:15 • annotate_overrides
+   info • The member 'email' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:83:15 • annotate_overrides
+   info • The member 'type' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:84:15 • annotate_overrides
+   info • The member 'toMap' overrides an inherited member but isn't annotated with '@override' • lib/usersAndItemsModel.dart:102:24 • annotate_overrides
+
