@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 import '../models/shared/user_models.dart';
 import '../login/login.dart';
 import '../providers/user_provider.dart';
+import '../widgets/common_widgets.dart';
 import 'itemEdit.dart';
 import 'itemTypes.dart';
 import 'itemView.dart';
@@ -51,175 +51,163 @@ class _HomeManagerPageState extends State<HomeManagerPage> {
     }
 
     User user = loggedInUserBase as User;
-    Color brandDark = HexColor("147158");
-    Color brandLight = HexColor("6AB29B");
 
-    return Scaffold(
-      backgroundColor: Color(0xFFF5F7F8),
-      appBar: AppBar(
-        title: Text(
-          'Oversight Panel',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        backgroundColor: brandDark,
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.logout, color: Colors.white),
-            onPressed: () => _showLogoutConfirmation(context, userData),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isTablet = constraints.maxWidth >= 600;
+        return Scaffold(
+          backgroundColor: AppColors.background,
+          appBar: AppBar(
+            title: Text('Manager Dashboard', style: AppTypography.headline.copyWith(color: Colors.white)),
+            backgroundColor: AppColors.brandDark,
+            elevation: 0,
+            actions: [
+              IconButton(
+                icon: Icon(Icons.logout, color: Colors.white),
+                onPressed: () => _showLogoutConfirmation(context, userData),
+              ),
+            ],
           ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header Section
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: brandDark,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(32),
-                  bottomRight: Radius.circular(32),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    getGreeting(),
-                    style: TextStyle(color: Colors.white70, fontSize: 18),
+          body: SingleChildScrollView(
+            padding: EdgeInsets.all(AppSpacing.md),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Compact Header
+                Container(
+                  padding: EdgeInsets.all(AppSpacing.md),
+                  decoration: BoxDecoration(
+                    color: AppColors.brandDark,
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    user.username,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.white24,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      "Chief Manager • Full Oversight",
-                      style: TextStyle(color: Colors.white, fontSize: 12),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Otoritas Manajemen",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  GridView.count(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    childAspectRatio: 1.1,
+                  child: Row(
                     children: [
-                      _buildMenuCard(
-                        context,
-                        "Kelola User",
-                        Icons.people_alt_outlined,
-                        Colors.blueAccent,
-                        () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ManageUsersPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        "Laporan Keuangan",
-                        Icons.payments_outlined,
-                        Colors.orangeAccent,
-                        () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => FinancialReportsPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        "Monitor Stok",
-                        Icons.inventory_2_outlined,
-                        brandLight,
-                        () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ViewItemPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        "Ubah Data",
-                        Icons.edit_note_outlined,
-                        Colors.teal,
-                        () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => EditItemPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        "Data Kategori",
-                        Icons.category_outlined,
-                        Colors.deepPurpleAccent,
-                        () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => EditItemTypePage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        "Pengaturan Sytem",
-                        Icons.settings_suggest_outlined,
-                        Colors.grey,
-                        () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text("Fitur dalam pengembangan."),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(getGreeting(), style: AppTypography.label.copyWith(color: Colors.white70)),
+                            SizedBox(height: AppSpacing.xs),
+                            Text(user.username, style: AppTypography.headline.copyWith(color: Colors.white)),
+                            SizedBox(height: AppSpacing.sm),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: AppSpacing.sm, vertical: AppSpacing.xs),
+                              decoration: BoxDecoration(
+                                color: Colors.white24,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Text("Manager", style: AppTypography.label.copyWith(color: Colors.white)),
                             ),
-                          );
-                        },
+                          ],
+                        ),
                       ),
+                      Icon(Icons.admin_panel_settings, color: Colors.white, size: 48),
                     ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: AppSpacing.lg),
+
+                // KPI Dashboard
+                Text("Key Metrics", style: AppTypography.section),
+                SizedBox(height: AppSpacing.md),
+                GridView.count(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  crossAxisCount: isTablet ? 3 : 2,
+                  crossAxisSpacing: AppSpacing.md,
+                  mainAxisSpacing: AppSpacing.md,
+                  childAspectRatio: 1.2,
+                  children: [
+                    KPICard(
+                      title: "Total Items",
+                      value: "1,247",
+                      icon: Icons.inventory_2,
+                      color: Colors.blue,
+                      trend: "+12%",
+                    ),
+                    KPICard(
+                      title: "Low Stock Alerts",
+                      value: "23",
+                      icon: Icons.warning,
+                      color: Colors.orange,
+                      trend: "+5",
+                    ),
+                    KPICard(
+                      title: "Revenue Today",
+                      value: "Rp 2.4M",
+                      icon: Icons.attach_money,
+                      color: Colors.green,
+                      trend: "+8%",
+                    ),
+                    KPICard(
+                      title: "Active Users",
+                      value: "156",
+                      icon: Icons.people,
+                      color: Colors.purple,
+                      trend: "+3",
+                    ),
+                    KPICard(
+                      title: "Pending Orders",
+                      value: "12",
+                      icon: Icons.pending,
+                      color: Colors.red,
+                      trend: "-2",
+                    ),
+                    KPICard(
+                      title: "Categories",
+                      value: "8",
+                      icon: Icons.category,
+                      color: Colors.teal,
+                      trend: "0",
+                    ),
+                  ],
+                ),
+                SizedBox(height: AppSpacing.lg),
+
+                // Quick Actions
+                Text("Quick Actions", style: AppTypography.section),
+                SizedBox(height: AppSpacing.md),
+                Wrap(
+                  spacing: AppSpacing.sm,
+                  runSpacing: AppSpacing.sm,
+                  children: [
+                    ActionButton(
+                      label: "Manage Users",
+                      icon: Icons.people,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ManageUsersPage())),
+                    ),
+                    ActionButton(
+                      label: "Financial Reports",
+                      icon: Icons.payments,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FinancialReportsPage())),
+                    ),
+                    ActionButton(
+                      label: "View Stock",
+                      icon: Icons.inventory,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ViewItemPage())),
+                    ),
+                    ActionButton(
+                      label: "Edit Items",
+                      icon: Icons.edit,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditItemPage())),
+                    ),
+                    ActionButton(
+                      label: "Categories",
+                      icon: Icons.category,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditItemTypePage())),
+                    ),
+                    ActionButton(
+                      label: "Settings",
+                      icon: Icons.settings,
+                      onTap: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Feature in development"))),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 

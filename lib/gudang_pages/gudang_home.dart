@@ -59,15 +59,9 @@ class _GudangHomePageState extends State<GudangHomePage> {
             children: [
               Icon(Icons.block, size: 64, color: Colors.red),
               SizedBox(height: 16),
-              Text(
-                "Akses Ditolak",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
+              Text("Access Denied", style: AppTypography.headline),
               SizedBox(height: 8),
-              Text(
-                "Halaman ini hanya untuk Staff Gudang",
-                style: TextStyle(fontSize: 16, color: Colors.grey),
-              ),
+              Text("This page is for Warehouse Staff only", style: AppTypography.label),
             ],
           ),
         ),
@@ -75,169 +69,151 @@ class _GudangHomePageState extends State<GudangHomePage> {
     }
 
     User user = loggedInUserBase as User;
-    Color brandDark = AppColors.brandDark;
-    Color brandLight = AppColors.brandLight;
 
-    return Scaffold(
-      backgroundColor: Color(0xFFF5F7F8),
-      appBar: CommonAppBar(
-        title: 'Warehouse Panel',
-        actions: [
-          IconButton(
-            icon: Icon(Icons.logout, color: Colors.white),
-            onPressed: () => _showLogoutConfirmation(context, userData),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isTablet = constraints.maxWidth >= 600;
+        return Scaffold(
+          backgroundColor: AppColors.background,
+          appBar: AppBar(
+            title: Text('Warehouse Dashboard', style: AppTypography.headline.copyWith(color: Colors.white)),
+            backgroundColor: AppColors.brandDark,
+            elevation: 0,
+            actions: [
+              IconButton(
+                icon: Icon(Icons.logout, color: Colors.white),
+                onPressed: () => _showLogoutConfirmation(context, userData),
+              ),
+            ],
           ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header Section
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: brandDark,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(32),
-                  bottomRight: Radius.circular(32),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    getGreeting(),
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
-                    ),
+          body: SingleChildScrollView(
+            padding: EdgeInsets.all(AppSpacing.md),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Compact Header
+                Container(
+                  padding: EdgeInsets.all(AppSpacing.md),
+                  decoration: BoxDecoration(
+                    color: AppColors.brandDark,
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    user.namaLengkap,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    'Staff Gudang',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Quick Stats
-                  _buildQuickStats(brandDark, brandLight),
-                  SizedBox(height: 24),
-                  Text(
-                    "Menu Gudang",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  GridView.count(
-                    crossAxisCount: 2,
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    childAspectRatio: 1.1,
+                  child: Row(
                     children: [
-                      _buildMenuCard(
-                        context,
-                        title: "Transaksi Stok",
-                        icon: Icons.swap_vert,
-                        color: brandDark,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => StockTransactionPage(),
-                          ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(getGreeting(), style: AppTypography.label.copyWith(color: Colors.white70)),
+                            SizedBox(height: AppSpacing.xs),
+                            Text(user.namaLengkap, style: AppTypography.headline.copyWith(color: Colors.white)),
+                            SizedBox(height: AppSpacing.sm),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: AppSpacing.sm, vertical: AppSpacing.xs),
+                              decoration: BoxDecoration(
+                                color: Colors.white24,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Text("Warehouse Staff", style: AppTypography.label.copyWith(color: Colors.white)),
+                            ),
+                          ],
                         ),
                       ),
-                      _buildMenuCard(
-                        context,
-                        title: "Riwayat Stok",
-                        icon: Icons.history,
-                        color: brandLight,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => StockHistoryPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        title: "Lihat Stok",
-                        icon: Icons.inventory_2,
-                        color: brandDark,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => GudangViewStockPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        title: "Stok Menipis",
-                        icon: Icons.warning_amber,
-                        color: Colors.orange,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LowStockPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        title: "Tambah Item",
-                        icon: Icons.add_circle,
-                        color: brandLight,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AddItemPage(),
-                          ),
-                        ),
-                      ),
-                      _buildMenuCard(
-                        context,
-                        title: "Scan Barcode",
-                        icon: Icons.qr_code_scanner,
-                        color: Colors.blue,
-                        onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Fitur Scan Barcode coming soon')),
-                          );
-                        },
-                      ),
+                      Icon(Icons.warehouse, color: Colors.white, size: 48),
                     ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: AppSpacing.lg),
+
+                // Dense Stats
+                Text("Inventory Overview", style: AppTypography.section),
+                SizedBox(height: AppSpacing.md),
+                FutureBuilder(
+                  future: FirebaseService().getItems(),
+                  builder: (context, snapshot) {
+                    final items = snapshot.data ?? [];
+                    final lowStockCount = items.where((item) => item.quantity < 10).length;
+                    final totalStock = items.fold(0, (sum, item) => sum + item.quantity);
+
+                    return GridView.count(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      crossAxisCount: isTablet ? 3 : 2,
+                      crossAxisSpacing: AppSpacing.md,
+                      mainAxisSpacing: AppSpacing.md,
+                      childAspectRatio: 1.2,
+                      children: [
+                        KPICard(
+                          title: "Total Items",
+                          value: "${items.length}",
+                          icon: Icons.inventory_2,
+                          color: AppColors.brandDark,
+                          trend: "",
+                        ),
+                        KPICard(
+                          title: "Total Stock",
+                          value: "$totalStock",
+                          icon: Icons.layers,
+                          color: Colors.blue,
+                          trend: "",
+                        ),
+                        KPICard(
+                          title: "Low Stock Alerts",
+                          value: "$lowStockCount",
+                          icon: Icons.warning,
+                          color: Colors.orange,
+                          trend: "",
+                        ),
+                      ],
+                    );
+                  },
+                ),
+                SizedBox(height: AppSpacing.lg),
+
+                // Quick Actions
+                Text("Quick Actions", style: AppTypography.section),
+                SizedBox(height: AppSpacing.md),
+                Wrap(
+                  spacing: AppSpacing.sm,
+                  runSpacing: AppSpacing.sm,
+                  children: [
+                    ActionButton(
+                      label: "Stock Transaction",
+                      icon: Icons.swap_vert,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StockTransactionPage())),
+                    ),
+                    ActionButton(
+                      label: "Stock History",
+                      icon: Icons.history,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => StockHistoryPage())),
+                    ),
+                    ActionButton(
+                      label: "View Stock",
+                      icon: Icons.inventory,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => GudangViewStockPage())),
+                    ),
+                    ActionButton(
+                      label: "Low Stock",
+                      icon: Icons.warning_amber,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LowStockPage())),
+                    ),
+                    ActionButton(
+                      label: "Add Item",
+                      icon: Icons.add_circle,
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddItemPage())),
+                    ),
+                    ActionButton(
+                      label: "Scan Barcode",
+                      icon: Icons.qr_code_scanner,
+                      onTap: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Barcode scan coming soon'))),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 

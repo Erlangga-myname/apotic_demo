@@ -1,0 +1,9 @@
+- [x] Wrap Scaffold body in SafeArea
+- [x] Add LayoutBuilder around Stack to detect screen constraints
+- [x] Constrain background image to screen width and proportional height (40%), use BoxFit.cover
+- [x] Use ConstrainedBox for content with maxWidth (480px tablet, unlimited phone)
+- [x] Adjust textScaleFactor responsively (larger on tablet)
+- [x] Make TextField widths responsive (400px tablet, 300px phone)
+- [x] Make button minimumSize responsive (300px width tablet, 200px phone)
+- [x] Ensure spacing with SizedBox
+- [x] Verify layout on phone and tablet

@@ -25,7 +25,7 @@ class _KasirHomePageState extends State<KasirHomePage> {
   List<Item>? _filteredItems;
   List<CartItem> _cart = [];
   final TextEditingController _searchController = TextEditingController();
-  
+
   // Format Rupiah Indonesia yang benar
   final NumberFormat _currencyFormat = NumberFormat.currency(
     locale: 'id_ID',
@@ -64,11 +64,12 @@ class _KasirHomePageState extends State<KasirHomePage> {
       _filteredItems = _items;
     } else {
       _filteredItems = _items!.where((item) {
-        final matchesSearch = _searchQuery.isEmpty ||
+        final matchesSearch =
+            _searchQuery.isEmpty ||
             item.name.toLowerCase().contains(_searchQuery) ||
             item.type.toLowerCase().contains(_searchQuery);
-        final matchesCategory = _selectedCategory == 'Semua' ||
-            item.type == _selectedCategory;
+        final matchesCategory =
+            _selectedCategory == 'Semua' || item.type == _selectedCategory;
         return matchesSearch && matchesCategory;
       }).toList();
     }
@@ -98,9 +99,9 @@ class _KasirHomePageState extends State<KasirHomePage> {
         if (_cart[index].quantity < item.quantity) {
           _cart[index].quantity++;
         } else {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Stok tidak mencukupi')),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text('Stok tidak mencukupi')));
         }
       } else {
         _cart.add(
@@ -180,7 +181,10 @@ class _KasirHomePageState extends State<KasirHomePage> {
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
                     ),
                   ),
                 ),
@@ -190,42 +194,53 @@ class _KasirHomePageState extends State<KasirHomePage> {
                   color: Colors.white,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: _buildCategoryChips(brandDark),
-                    ),
+                    child: Row(children: _buildCategoryChips()),
                   ),
                 ),
                 // Item Grid
                 Expanded(
                   child: _items == null
-                      ? Center(child: CircularProgressIndicator(color: brandDark))
+                      ? Center(
+                          child: CircularProgressIndicator(color: brandDark),
+                        )
                       : (_filteredItems!.isEmpty
-                          ? Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.search_off, size: 64, color: Colors.grey.shade300),
-                                  SizedBox(height: 16),
-                                  Text("Item tidak ditemukan", style: TextStyle(color: Colors.grey)),
-                                ],
-                              ),
-                            )
-                          : RefreshIndicator(
-                              onRefresh: _loadItems,
-                              color: brandDark,
-                              child: GridView.builder(
-                                padding: EdgeInsets.all(16),
-                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                  crossAxisSpacing: 12,
-                                  mainAxisSpacing: 12,
-                                  childAspectRatio: 0.9,
+                            ? Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.search_off,
+                                      size: 64,
+                                      color: Colors.grey.shade300,
+                                    ),
+                                    SizedBox(height: 16),
+                                    Text(
+                                      "Item tidak ditemukan",
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                  ],
                                 ),
-                                itemCount: _filteredItems!.length,
-                                itemBuilder: (context, index) =>
-                                    _buildItemCard(_filteredItems![index], brandDark),
-                              ),
-                            )),
+                              )
+                            : RefreshIndicator(
+                                onRefresh: _loadItems,
+                                color: brandDark,
+                                child: GridView.builder(
+                                  padding: EdgeInsets.all(16),
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: 3,
+                                        crossAxisSpacing: 12,
+                                        mainAxisSpacing: 12,
+                                        childAspectRatio: 0.9,
+                                      ),
+                                  itemCount: _filteredItems!.length,
+                                  itemBuilder: (context, index) =>
+                                      _buildItemCard(
+                                        _filteredItems![index],
+                                        brandDark,
+                                      ),
+                                ),
+                              )),
                 ),
               ],
             ),
@@ -241,24 +256,33 @@ class _KasirHomePageState extends State<KasirHomePage> {
     );
   }
 
-  List<Widget> _buildCategoryChips(Color brandDark) {
-    final categories = ['Semua', 'Obat', 'Alkes', 'Vitamin', 'Suplemen', 'Lainnya'];
-    
+  List<Widget> _buildCategoryChips() {
+    final categories = [
+      'All',
+      'Medicine',
+      'Medical',
+      'Vitamin',
+      'Supplement',
+      'Other',
+    ];
+
     return categories.map((category) {
       final isSelected = _selectedCategory == category;
       return Padding(
-        padding: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(right: AppSpacing.xs),
         child: FilterChip(
           selected: isSelected,
-          label: Text(category),
+          label: Text(category, style: AppTypography.label),
           onSelected: (_) => _setCategory(category),
-          selectedColor: brandDark,
+          selectedColor: AppColors.brandDark,
           checkmarkColor: Colors.white,
           labelStyle: TextStyle(
-            color: isSelected ? Colors.white : Colors.black87,
+            color: isSelected ? Colors.white : AppColors.textPrimary,
             fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
           ),
-          side: BorderSide(color: isSelected ? brandDark : Colors.grey.shade300),
+          side: BorderSide(
+            color: isSelected ? AppColors.brandDark : Colors.grey.shade300,
+          ),
         ),
       );
     }).toList();
@@ -285,8 +309,8 @@ class _KasirHomePageState extends State<KasirHomePage> {
             color: outOfStock
                 ? Colors.red.shade200
                 : lowStock
-                    ? Colors.orange.shade200
-                    : Colors.transparent,
+                ? Colors.orange.shade200
+                : Colors.transparent,
           ),
         ),
         child: Column(
@@ -303,7 +327,9 @@ class _KasirHomePageState extends State<KasirHomePage> {
                 ),
                 child: item.imagePath != null && item.imagePath!.isNotEmpty
                     ? ClipRRect(
-                        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(16),
+                        ),
                         child: Image.file(
                           File(item.imagePath!),
                           fit: BoxFit.cover,
@@ -354,14 +380,14 @@ class _KasirHomePageState extends State<KasirHomePage> {
                           outOfStock
                               ? Icons.remove_circle
                               : lowStock
-                                  ? Icons.warning
-                                  : Icons.check_circle,
+                              ? Icons.warning
+                              : Icons.check_circle,
                           size: 12,
                           color: outOfStock
                               ? Colors.red
                               : lowStock
-                                  ? Colors.orange
-                                  : Colors.green,
+                              ? Colors.orange
+                              : Colors.green,
                         ),
                         SizedBox(width: 4),
                         Text(
@@ -371,8 +397,8 @@ class _KasirHomePageState extends State<KasirHomePage> {
                             color: outOfStock
                                 ? Colors.red
                                 : lowStock
-                                    ? Colors.orange
-                                    : Colors.grey,
+                                ? Colors.orange
+                                : Colors.grey,
                           ),
                         ),
                       ],
@@ -394,9 +420,7 @@ class _KasirHomePageState extends State<KasirHomePage> {
         // Header - Flat design
         Container(
           padding: EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: brandDark,
-          ),
+          decoration: BoxDecoration(color: brandDark),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -452,7 +476,10 @@ class _KasirHomePageState extends State<KasirHomePage> {
                       SizedBox(height: 8),
                       Text(
                         "Klik item untuk menambah",
-                        style: TextStyle(color: Colors.grey.shade400, fontSize: 12),
+                        style: TextStyle(
+                          color: Colors.grey.shade400,
+                          fontSize: 12,
+                        ),
                       ),
                     ],
                   ),
@@ -537,19 +564,13 @@ class _KasirHomePageState extends State<KasirHomePage> {
               children: [
                 Text(
                   item.name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   _currencyFormat.format(item.price),
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                    fontSize: 12,
-                  ),
+                  style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
                 ),
               ],
             ),
@@ -592,10 +613,7 @@ class _KasirHomePageState extends State<KasirHomePage> {
           SizedBox(width: 12),
           Text(
             _currencyFormat.format(item.price * item.quantity),
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: brandDark,
-            ),
+            style: TextStyle(fontWeight: FontWeight.bold, color: brandDark),
           ),
         ],
       ),
@@ -609,9 +627,7 @@ class _KasirHomePageState extends State<KasirHomePage> {
         children: [
           Container(
             padding: EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              color: brandDark,
-            ),
+            decoration: BoxDecoration(color: brandDark),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -627,10 +643,7 @@ class _KasirHomePageState extends State<KasirHomePage> {
                 SizedBox(height: 8),
                 Text(
                   "Kasir Panel",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
-                  ),
+                  style: TextStyle(color: Colors.white70, fontSize: 14),
                 ),
               ],
             ),
@@ -741,7 +754,10 @@ class _KasirHomePageState extends State<KasirHomePage> {
     );
   }
 
-  Future<void> _completeTransaction(PaymentMethod paymentMethod, int paidAmount) async {
+  Future<void> _completeTransaction(
+    PaymentMethod paymentMethod,
+    int paidAmount,
+  ) async {
     if (_cart.isEmpty) return;
 
     try {
@@ -798,7 +814,7 @@ class _KasirHomePageState extends State<KasirHomePage> {
         ),
       );
 
-setState(() => _cart.clear());
+      setState(() => _cart.clear());
       _loadItems();
 
       // Simpan total sebelum cart di-clear
@@ -819,9 +835,7 @@ setState(() => _cart.clear());
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         contentPadding: EdgeInsets.all(24),
         title: Container(
           width: double.infinity,
@@ -921,19 +935,12 @@ setState(() => _cart.clear());
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          label,
-          style: TextStyle(color: Colors.grey.shade600),
-        ),
+        Text(label, style: TextStyle(color: Colors.grey.shade600)),
         Text(
           value,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
         ),
       ],
     );
   }
 }
-

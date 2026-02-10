@@ -163,160 +163,175 @@ class _LoginPageState extends State<LoginPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Align(
-            alignment: Alignment.topCenter,
-            child: Image.asset('assets/login_bg.png'),
-          ),
-          Center(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize
-                      .min, // Ensures minimum height, avoiding unnecessary scrolling
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      child: Title(
-                        child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              clickCount++;
-                            });
-                          },
-                          child: Text(
-                            "Selamat Datang",
-                            textScaleFactor: 2,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("147158"),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        color: HexColor("147158"),
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      child: Title(
-                        child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              clickCount = 0;
-                            });
-                          },
-                          child: Text(
-                            "Silahkan Login Untuk Mengakses Apotic",
-                            textScaleFactor: 1.2,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("147158"),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        color: HexColor("147158"),
-                      ),
-                    ),
-                    if (_errorMessage != null) ...[
-                      SizedBox(height: 15.0),
-                      Container(
-                        width: double.infinity,
-                        child: Text(
-                          _errorMessage!,
-                          style: TextStyle(color: Colors.red),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                    SizedBox(height: 16.0),
-                    Container(
-                      width: 300,
-                      child: TextField(
-                        controller: _usernameController,
-                        decoration: InputDecoration(
-                          labelText: 'Username',
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: HexColor("147158")),
-                          ),
-                          labelStyle: TextStyle(color: HexColor("147158")),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10.0),
-                    Container(
-                      width: 300,
-                      child: TextField(
-                        controller: _passwordController,
-                        obscureText: !_isPasswordVisible,
-                        focusNode: _passwordFocusNode,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: HexColor("147158")),
-                          ),
-                          labelStyle: TextStyle(color: HexColor("147158")),
-                          suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                _isPasswordVisible = !_isPasswordVisible;
-                              });
-                            },
-                            icon: Icon(
-                              _isPasswordVisible
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                              color: HexColor("147158"),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 24.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        _login(context);
-                      },
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                          HexColor("#6AB29B"),
-                        ),
-                        minimumSize: MaterialStateProperty.all<Size>(
-                          Size(200, 50),
-                        ),
-                      ),
-                      child: Text(
-                        'Masuk',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    SizedBox(height: 16.0),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => RegistrationPage(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        'Belum Mempunyai Akun? Daftar.',
-                        style: TextStyle(color: HexColor("4F6F52")),
-                      ),
-                    ),
-                  ],
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            bool isTablet = constraints.maxWidth >= 600;
+            return Stack(
+              fit: StackFit.expand,
+              children: [
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: constraints.maxHeight * 0.4,
+                  child: Image.asset(
+                    'assets/login_bg.png',
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-            ),
-          ),
-        ],
+                Center(
+                  child: SingleChildScrollView(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: isTablet ? 480 : double.infinity),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: double.infinity,
+                              child: Title(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      clickCount++;
+                                    });
+                                  },
+                                  child: Text(
+                                    "Selamat Datang",
+                                    textScaleFactor: isTablet ? 2.5 : 2,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: HexColor("147158"),
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                                color: HexColor("147158"),
+                              ),
+                            ),
+                            Container(
+                              width: double.infinity,
+                              child: Title(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      clickCount = 0;
+                                    });
+                                  },
+                                  child: Text(
+                                    "Silahkan Login Untuk Mengakses Apotic",
+                                    textScaleFactor: isTablet ? 1.5 : 1.2,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: HexColor("147158"),
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                                color: HexColor("147158"),
+                              ),
+                            ),
+                            if (_errorMessage != null) ...[
+                              SizedBox(height: 15.0),
+                              Container(
+                                width: double.infinity,
+                                child: Text(
+                                  _errorMessage!,
+                                  style: TextStyle(color: Colors.red),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                            SizedBox(height: 16.0),
+                            Container(
+                              width: isTablet ? 400 : 300,
+                              child: TextField(
+                                controller: _usernameController,
+                                decoration: InputDecoration(
+                                  labelText: 'Username',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: HexColor("147158")),
+                                  ),
+                                  labelStyle: TextStyle(color: HexColor("147158")),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Container(
+                              width: isTablet ? 400 : 300,
+                              child: TextField(
+                                controller: _passwordController,
+                                obscureText: !_isPasswordVisible,
+                                focusNode: _passwordFocusNode,
+                                decoration: InputDecoration(
+                                  labelText: 'Password',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: HexColor("147158")),
+                                  ),
+                                  labelStyle: TextStyle(color: HexColor("147158")),
+                                  suffixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        _isPasswordVisible = !_isPasswordVisible;
+                                      });
+                                    },
+                                    icon: Icon(
+                                      _isPasswordVisible
+                                          ? Icons.visibility_off
+                                          : Icons.visibility,
+                                      color: HexColor("147158"),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 24.0),
+                            ElevatedButton(
+                              onPressed: () {
+                                _login(context);
+                              },
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all<Color>(
+                                  HexColor("#6AB29B"),
+                                ),
+                                minimumSize: MaterialStateProperty.all<Size>(
+                                  Size(isTablet ? 300 : 200, 50),
+                                ),
+                              ),
+                              child: Text(
+                                'Masuk',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                            SizedBox(height: 16.0),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => RegistrationPage(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                'Belum Mempunyai Akun? Daftar.',
+                                style: TextStyle(color: HexColor("4F6F52")),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
